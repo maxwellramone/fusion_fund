@@ -4,16 +4,21 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 from transformers import BartTokenizer, BartForConditionalGeneration
 from requests.structures import CaseInsensitiveDict
+from toJson import update_stats_file
 
 maxLength = 2000
 
 # Saves all the text in dictionary to be later converted into excel sheet
 def summarize(model, url, summary):
+    from datetime import datetime
     import datetime
     
     command = "This is a text which mentions updates and work about this current ai technology. Identify the points which will help us decide if we should invest in this technology or its products as a venture capitalist:"
 
     mainText = getContent(url)
+	
+    textLen = len(mainText)
+    update_stats_file("totalWords", added_value=textLen)
 
     times = int(len(mainText)/maxLength)
 
@@ -41,7 +46,15 @@ def summarize(model, url, summary):
 		
         if(len(mainText) > maxLength):
             mainText = mainText[maxLength:]
+			
+        month = datetime.date.today().strftime("%B")[:3].lower()
+		
+        
+        update_stats_file("totalSums")
+        update_stats_file("sumsByTech", nested_key=model, double_nested_key=month)	
     
+    
+        
 
 def getHeaders(url):
 	title = ""

@@ -48,7 +48,7 @@ def summarize_view(request):
 
 
 @api_view(["POST"])	
-def getData(request):
+def getSummaries(request):
 	from excel import filter_excel_data, extract_summary_bart_cells, list_to_json
 
 	# Handle data inputs
@@ -58,6 +58,10 @@ def getData(request):
 		
 		date = request.data.get("date", None)
 		model = request.data.get("model", None)
+
+		if model is not None:
+			model.upper()
+
 		print(model)
 		try:
 
@@ -74,10 +78,29 @@ def getData(request):
 
 
 
+@api_view(["POST"])
+def getStats(request):
+	from toJson import read_stats_file, convert_to_new_array
+	
+
+	if request.method == "POST":
+		stat = request.data.get("stat", None) 
+		print(stat)
+		obj = read_stats_file(key=stat)
+		
+		if stat == "sumsbytech":
+			print("check")
+			obj = convert_to_new_array(obj)
+
+		return Response(obj, status=200)
+
+
+
+
 
 @api_view(["POST"])
 def sendEmail(request):
-	if request.methods == "POST":
+	if request.method == "POST":
 
 
 

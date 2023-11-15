@@ -21,9 +21,10 @@ from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summarize', summarize_view),
-    path('getdata', getData),
+    path('getsummaries', getSummaries),
     path('sendemail', sendEmail),
     path('test', test),
-    path('makeLog', makeLog),
-    path('savejsonfile', saveJSONFile)
+    path('makelog', makeLog),
+    path('savejsonfile', saveJSONFile),
+    path('getstats', getStats)
 ]

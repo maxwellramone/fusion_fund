@@ -1,10 +1,12 @@
 from summary import summarize
 from excel import toExcel
+from toJson import update_stats_file, read_stats_file
+from datetime import datetime
 
 
 websites = [
     {
-        "OpenAI" : [ 
+        "OPENAI" : [ 
             "https://en.wikipedia.org/wiki/OpenAI"
 
         ],
@@ -16,7 +18,7 @@ websites = [
             "https://bair.berkeley.edu/blog/"
 
         ],
-        "Vector" : [
+        "VECTOR" : [
             "https://vectorinstitute.ai/vector-institute-2022-23-annual-report-accelerating-ai-in-ontario/"
 
         ],
@@ -28,7 +30,7 @@ websites = [
             "https://en.wikipedia.org/wiki/Meta_AI"
 
         ],
-        "GoogleAI" : [
+        "GOOGLEAI" : [
             "https://en.wikipedia.org/wiki/Google_AI"
 
         ],
@@ -36,7 +38,7 @@ websites = [
             "https://en.wikipedia.org/wiki/Allen_Institute_for_AI"
 
         ],
-        "DeepMind" : [
+        "DEEPMIND" : [
             "https://en.wikipedia.org/wiki/Google_DeepMind"
 
         ]
@@ -47,12 +49,15 @@ websites = [
 
 def collectData():
     keys = list(websites[0].keys())
-
+    
+    update_stats_file("totalTechsTracked", new_value=len(keys))
+    
     for i in range(len(websites[0])):
         summary = []
         for k in range(len(websites[0][keys[i]])):
-            summarize(keys[i], websites[0][keys[i]][k], summary)
+            summarize(keys[i], websites[0][keys[i]][k], summary)            
         print(summary) 
+
         toExcel(summary, keys[i])
     print("Complete!")
     
@@ -64,6 +69,7 @@ def collectData():
 # summarize("OpenAI", "https://en.wikipedia.org/wiki/OpenAI")
 # print(weeklySummary)
 # toExcel()
+
 
 
 
