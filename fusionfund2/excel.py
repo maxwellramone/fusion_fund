@@ -188,6 +188,19 @@ def createLog():
 
 
 
+def getTop3(model):
+    print("getTop3")
+
+
+
+
+
+
+
+
+
+
+
 
 def list_to_json(input_list):
     import json
@@ -198,6 +211,9 @@ def list_to_json(input_list):
         return json_string
     except Exception as e:
         return str(e)
+
+
+
 
 
 

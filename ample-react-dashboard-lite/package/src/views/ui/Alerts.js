@@ -105,7 +105,7 @@ const [days,setdays] = useState (getLatestFiveSundays())
         }),
       };
   
-      const response = await fetch('http://localhost:8000/getdata', requestOptions);
+      const response = await fetch('http://localhost:8000/getsummaries', requestOptions);
   
       if (response.ok) {
         const data = await response.json();
