@@ -12,27 +12,28 @@ const navigation = [
     title: "Company #1",
     href: "/alerts",
     icon: "bi bi-bell",
-  },
-  {
-    title: "Company #2",
-    href: "/badges",
-    icon: "bi bi-patch-check",
-  },
-  {
-    title: "Company #3",
-    href: "/buttons",
-    icon: "bi bi-hdd-stack",
-  },
-  {
-    title: "Company #4",
-    href: "/cards",
-    icon: "bi bi-card-text",
-  },
-  {
-    title: "Company #5",
-    href: "/grid",
-    icon: "bi bi-columns",
-  },
+  }
+//   {
+//     title: "Company #2",
+//     href: "/badges",
+//     icon: "bi bi-patch-check",
+//   },
+//   {
+//     title: "Company #3",
+//     href: "/buttons",
+//     icon: "bi bi-hdd-stack",
+//   },
+//   {
+//     title: "Company #4",
+//     href: "/cards",
+//     icon: "bi bi-card-text",
+//   },
+//   {
+//     title: "Company #5",
+//     href: "/grid",
+//     icon: "bi bi-columns",
+//   },
+,
   {
     title: "About",
     href: "/about",

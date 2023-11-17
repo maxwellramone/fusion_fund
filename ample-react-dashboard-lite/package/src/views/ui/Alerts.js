@@ -172,7 +172,9 @@ const [days,setdays] = useState (getLatestFiveSundays())
         </CardTitle>
         <CardBody className="">
           <div className="mt-3">
-            <h3>Replace this with company summary from backend</h3>
+            <h3>
+      <> Showing Data for {date} and Ai-technology from {aimodel}</>
+    </h3>
           </div>
         </CardBody>
       
@@ -182,8 +184,8 @@ const [days,setdays] = useState (getLatestFiveSundays())
       <Card>
         <CardTitle tag="h6" className="border-bottom p-3 mb-0">
           <i className="bi bi-bell me-2" />
-          company summary #2
-          <div>
+          Select your conditions of the information
+          <div className="sbs">
       <Dropdown onselect={handleChangedate}>
         <DropdownToggle variant="primary">Select Date</DropdownToggle>
         <DropdownMenu>
@@ -192,7 +194,7 @@ const [days,setdays] = useState (getLatestFiveSundays())
           ))}
         </DropdownMenu>
       </Dropdown>
-
+           <h3>{date}</h3>
       <Dropdown>
         <DropdownToggle variant="primary">Select AI</DropdownToggle>
         <DropdownMenu>
@@ -203,9 +205,6 @@ const [days,setdays] = useState (getLatestFiveSundays())
       </Dropdown>
     </div>
 
-    <div>
-      <> showing data for {date} and aitechnology {aimodel}</>
-    </div>
         </CardTitle>
         <CardBody className="">
           <div>
