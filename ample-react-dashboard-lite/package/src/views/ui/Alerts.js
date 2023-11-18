@@ -207,6 +207,7 @@ const [days,setdays] = useState ([])
           ))}
         </DropdownMenu>
       </Dropdown>
+      <h3>{aimodel}</h3>
     </div>
 
         </CardTitle>
@@ -225,8 +226,9 @@ const [days,setdays] = useState ([])
             if (true) {
               return (
                 <div key={data}>
-                  <Card>
-                    {data} </Card>
+                  <Alert color="success">
+                
+                    {data} </Alert>
                 </div>
               )
       //   {
@@ -259,19 +261,15 @@ const [days,setdays] = useState ([])
         </CardTitle>
         <CardBody className="">
           <div>
-            {/* <Alert color="success">
-              <h4 className="alert-heading">Well done!</h4>
+            <Alert color="success">
+              {/* <h4 className="alert-heading">Well done!</h4> */}
               <p>
                 Aww yeah, you successfully read this important alert message.
                 This example text is going to run a bit longer so that you can
                 see how spacing within an alert works with this kind of content.
               </p>
-              <hr />
-              <p className="mb-0">
-                Whenever you need to, be sure to use margin utilities to keep
-                things nice and tidy.
-              </p>
-            </Alert> */}
+             
+            </Alert>
             <h3>add</h3>
           </div>
         </CardBody>

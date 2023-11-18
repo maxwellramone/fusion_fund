@@ -130,3 +130,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     # Add any other origins you want to allow.
 ]
+
+
+# from decouple import config
+SCOPUS_API_KEY = 'SCOPUS_API_KEY'
+PUBMED_API_KEY = 'PUBMED_API_KEY'
+WOS_API_KEY = 'WOS_API_KEY'
+IEEE_API_KEY = 'IEEE_API_KEY'

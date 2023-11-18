@@ -9,7 +9,7 @@ const navigation = [
     icon: "bi bi-speedometer2",
   },
   {
-    title: "Company #1",
+    title: "Tech Summaries",
     href: "/alerts",
     icon: "bi bi-bell",
   }
@@ -50,7 +50,8 @@ const Sidebar = () => {
   return (
     <div className="p-3">
       <div className="d-flex align-items-center">
-        <Logo />
+        {/* <Logo /> */}
+        <h2>AI Research </h2>
         <span className="ms-auto d-lg-none">
         <Button
           close

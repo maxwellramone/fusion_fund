@@ -28,6 +28,7 @@ urlpatterns = [
     path('savejsonfile', saveJSONFile),
     path('getstats', getStats),
     path('getindistats', getindiStats),
-    path('getdates', getdates)
+    path('getdates', getdates),
+    path('searchresearch', searchresearch)
     
 ]
