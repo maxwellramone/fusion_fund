@@ -276,66 +276,7 @@ const [days,setdays] = useState ([])
           </div>
         </CardBody>
       </Card>
-      {/* --------------------------------------------------------------------------------
-      {/* Card-4*/}
-      {/* --------------------------------------------------------------------------------*/}
-      {/* <Card>
-        <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-          <i className="bi bi-bell me-2" />
-          Alert with Dissmissing
-        </CardTitle>
-        <CardBody className="">
-          <div>
-            <Alert color="info" isOpen={visible} toggle={onDismiss.bind(null)}>
-              I am an alert and I can be dismissed!
-            </Alert>
-          </div>
-        </CardBody>
-      </Card> */}
-      {/* --------------------------------------------------------------------------------*/}
-      {/* Card-5*/}
-      {/* --------------------------------------------------------------------------------*/}
-      {/* <Card>
-        <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-          <i className="bi bi-bell me-2" />
-          Alert with Uncontrolled [disable] Alerts
-        </CardTitle>
-        <CardBody className="">
-          <div>
-            <UncontrolledAlert color="info">
-              I am an alert and I can be dismissed!
-            </UncontrolledAlert>
-          </div>
-        </CardBody>
-      </Card> */}
-      {/* --------------------------------------------------------------------------------*/}
-      {/* Card-6*/}
-      {/* --------------------------------------------------------------------------------*/}
-      {/* <Card>
-        <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-          <i className="bi bi-bell me-2" />
-          Alerts without fade
-        </CardTitle>
-        <CardBody className="">
-          <div>
-            <Alert
-              color="primary"
-              isOpen={visible}
-              toggle={onDismiss.bind(null)}
-              fade={false}
-            >
-              I am a primary alert and I can be dismissed without animating!
-            </Alert>
-            <UncontrolledAlert color="warning" fade={false}>
-              I am an alert and I can be dismissed without animating!
-            </UncontrolledAlert>
-          </div>
-        </CardBody>
-      </Card>  */}
-
-      {/* --------------------------------------------------------------------------------*/}
-      {/* End Inner Div*/}
-      {/* --------------------------------------------------------------------------------*/}
+      
     </div>
   );
 };

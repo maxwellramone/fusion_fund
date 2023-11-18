@@ -9,6 +9,14 @@ import bg1 from "../assets/images/bg/bg1.jpg";
 import bg2 from "../assets/images/bg/bg2.jpg";
 import bg3 from "../assets/images/bg/bg3.jpg";
 import bg4 from "../assets/images/bg/bg4.jpg";
+import {
+  Alert,
+  UncontrolledAlert,
+  Card,
+  CardBody,
+  CardTitle,
+} from "reactstrap";
+import { Dropdown, DropdownToggle, DropdownMenu } from "react-bootstrap";
 
 
 const BlogData = [
@@ -59,13 +67,27 @@ const Starter = () => {
   const [totalwords, settotalwords] = useState(0);
   const [totaltechstracked, settotaltechstracked] = useState(0);
   const [totalsums, settotalsums] = useState(0);
+  const [rsite, setrsite] = useState("");
+
+
+  const handleChangedate = (e) => {
+    setrsite(e.value)
+  };
+
+
+  const [researchvals, setresearchvals] = useState(
+    [{ text: 'Pubmed', value: 'Pubmed' },
+    { text: 'Scopus', value: 'Scopus' },
+    { text: 'IEEE', value: 'IEEE' }
+    ]);
+
 
 
   const onMount = async () => {
     try {
       // const date = '08-11-2023'; // Replace with the desired date value
       // const model = 'OpenAI'; // Replace with the desired model value
-  
+
       const requestOptions = {
         method: 'POST',
         headers: {
@@ -76,12 +98,41 @@ const Starter = () => {
           aimodel,
         }),
       };
-  
+
       const response = await fetch('http://localhost:8000/summarize', requestOptions);
-  
+
       if (response.ok) {
         const data = await response.json();
         setRecord(JSON.parse(data)); // Update the state with the fetched data
+      } else {
+        console.error('Failed to fetch data from the API');
+      }
+    } catch (error) {
+      console.error('An error occurred while fetching data:', error);
+    }
+  };
+
+
+  const researchtrigger = async () => {
+    try {
+      // const date = '08-11-2023'; // Replace with the desired date value
+      // const model = 'OpenAI'; // Replace with the desired model value
+
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          rsite
+        }),
+      };
+
+      const response = await fetch('http://localhost:8000/searchresearch', requestOptions);
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(JSON.parse(data)); // Update the state with the fetched data
       } else {
         console.error('Failed to fetch data from the API');
       }
@@ -140,10 +191,18 @@ const Starter = () => {
 
   const sayHello = () => {
     alert('Hello!');
-  
-    onMount();
+
+    // onMount();
 
   }
+
+  const runresearch = () => {
+    alert('Hello! 2');
+
+    researchtrigger();
+
+  }
+
   return (
     <div>
       {/***Top Cards***/}
@@ -175,17 +234,9 @@ const Starter = () => {
             icon="bi bi-basket3"
           />
         </Col>
-        {/* <Col sm="6" lg="3">
-          <TopCards
-            bg="bg-light-info text-into"
-            title="Sales"
-            subtitle="Weekly Sales"
-            earning="210"
-            icon="bi bi-bag"
-          />
-        </Col> */}
+
       </Row>
-      {/***Sales & Feed***/}
+
       <Row>
         <Col xxl="12">
           <SalesChart />
@@ -193,34 +244,62 @@ const Starter = () => {
       </Row>
       {/***Table ***/}
       <Row>
-      <Col>
-      <button onClick={sayHello}>
-      Click me!
-    </button>
-    </Col>
-    </Row>
-      {/* <Row>
-        <Col lg="7" xxl="8" md="12">
-          <ProjectTables />
+        <Col>
+
+
         </Col>
-        <Col md="12" lg="5" xxl="4">
-          <Feeds />
+      </Row>
+
+      <Row>
+        <Col sm="6" lg="6" onClick={runresearch}>
+          <TopCards
+            bg="bg-light-success text-success"
+            subtitle="Click here !  Run the Web crawler for research engines !"
+          >
+            <button onClick={sayHello}>
+              Run the Web crawler for web engines !
+            </button>
+          </TopCards>
         </Col>
-      </Row> */}
-      {/***Blog Cards***/}
-      {/* <Row>
-        {BlogData.map((blg, index) => (
-          <Col sm="6" lg="6" xl="3" key={index}>
-            <Blog
-              image={blg.image}
-              title={blg.title}
-              subtitle={blg.subtitle}
-              text={blg.description}
-              color={blg.btnbg}
-            />
-          </Col>
-        ))}
-      </Row> */}
+        <Col sm="6" lg="6" >
+
+          <Card>
+            {/* <CardTitle tag="h6" className="border-bottom p-3 mb-0"> */}
+             
+                <Dropdown onselect={handleChangedate}>
+                  <DropdownToggle variant="primary">Select Research Site</DropdownToggle>
+                  <DropdownMenu>
+                    {researchvals.map((option) => (
+                      <Dropdown.Item key={option.value} onClick={() => handleChangedate(option)}>{option.text}</Dropdown.Item>
+                    ))}
+                          
+                  </DropdownMenu><h3>{rsite}</h3>
+                </Dropdown>
+
+                <button onClick={runresearch} onClick={runresearch}>
+              Click to trigger search !
+            </button>
+
+          
+
+            {/* </CardTitle> */}
+
+          </Card>
+          {/* <TopCards
+            bg="bg-light-danger text-danger"
+            subtitle="Click here ! Run the Web crawler for research engines !"
+          >
+            <button onClick={runresearch}>
+              Run the Web crawler for research engines !
+            </button>
+          </TopCards> */}
+        </Col>
+
+
+      </Row>
+
+
+
     </div>
   );
 };

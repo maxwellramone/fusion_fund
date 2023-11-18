@@ -134,14 +134,27 @@ def getdates(request):
 
 
 
+@api_view(["POST"])
+def searchresearch(request):
+	from crawler_pubmed import search
+
+	if request.method == "POST":
+
+		
+		stat = request.data.get("rsite", "scopus") 
+		# print(stat)
+		obj = search("AI Technology",stat)
+
+
+		return Response(obj, status=200)
+
+
+
 
 
 @api_view(["POST"])
 def sendEmail(request):
 	if request.method == "POST":
-
-
-
 
 
 		return Response('summary', status=200)
