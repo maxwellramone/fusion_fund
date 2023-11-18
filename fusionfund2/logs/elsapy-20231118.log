@@ -12,6 +12,7 @@
 2023-11-18 16:04:42,744 - elsapy.elsentity - INFO - Module loaded.
 2023-11-18 16:04:42,744 - elsapy.elsprofile - INFO - Module loaded.
 2023-11-18 16:04:42,744 - elsapy.elsdoc - INFO - Module loaded.
+<<<<<<< Updated upstream
 2023-11-18 18:05:11,429 - elsapy.elsclient - INFO - Module loaded.
 2023-11-18 18:05:11,431 - elsapy.utils - INFO - Module loaded.
 2023-11-18 18:05:11,431 - elsapy.elssearch - INFO - Module loaded.
@@ -24,3 +25,25 @@
 2023-11-18 18:10:42,751 - elsapy.elsentity - INFO - Module loaded.
 2023-11-18 18:10:42,751 - elsapy.elsprofile - INFO - Module loaded.
 2023-11-18 18:10:42,752 - elsapy.elsdoc - INFO - Module loaded.
+=======
+2023-11-18 16:41:29,612 - elsapy.elsclient - INFO - Module loaded.
+2023-11-18 16:41:29,616 - elsapy.utils - INFO - Module loaded.
+2023-11-18 16:41:29,616 - elsapy.elssearch - INFO - Module loaded.
+2023-11-18 16:41:29,618 - elsapy.elsentity - INFO - Module loaded.
+2023-11-18 16:41:29,619 - elsapy.elsprofile - INFO - Module loaded.
+2023-11-18 16:41:29,620 - elsapy.elsdoc - INFO - Module loaded.
+2023-11-18 17:14:44,732 - elsapy.elsclient - INFO - Module loaded.
+2023-11-18 17:14:44,734 - elsapy.utils - INFO - Module loaded.
+2023-11-18 17:14:44,734 - elsapy.elssearch - INFO - Module loaded.
+2023-11-18 17:14:44,736 - elsapy.elsentity - INFO - Module loaded.
+2023-11-18 17:14:44,736 - elsapy.elsprofile - INFO - Module loaded.
+2023-11-18 17:14:44,736 - elsapy.elsdoc - INFO - Module loaded.
+2023-11-18 17:16:11,271 - elsapy.elsclient - INFO - Module loaded.
+2023-11-18 17:16:11,271 - elsapy.utils - INFO - Module loaded.
+2023-11-18 17:16:11,274 - elsapy.elssearch - INFO - Module loaded.
+2023-11-18 17:16:11,274 - elsapy.elsentity - INFO - Module loaded.
+2023-11-18 17:16:11,274 - elsapy.elsprofile - INFO - Module loaded.
+2023-11-18 17:16:11,279 - elsapy.elsdoc - INFO - Module loaded.
+2023-11-18 17:16:12,273 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/scopus?query=KEY%28AI+Technology%29+AND+PUBYEAR+%3E+2021
+2023-11-18 17:16:13,248 - elsapy.utils - INFO - Converting prism:coverDate
+>>>>>>> Stashed changes
