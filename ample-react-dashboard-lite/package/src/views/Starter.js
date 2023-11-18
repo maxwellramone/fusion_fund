@@ -49,17 +49,68 @@ const BlogData = [
 
 
 const Starter = () => {
+<<<<<<< HEAD
   const [chartoptions, setChartData] = useState(null);
   
   async function fetchDataFromBackendAPI() {
     try {
       const response = await fetch('http://localhost:8000/getstats', {
+=======
+
+  const [record, setRecord] = useState([]);
+
+  const [date, setdate] = useState("");
+  const [aimodel, setaimodel] = useState("");
+
+
+  const [totalwords, settotalwords] = useState(0);
+  const [totaltechstracked, settotaltechstracked] = useState(0);
+  const [totalsums, settotalsums] = useState(0);
+
+
+  const onMount = async () => {
+    try {
+      // const date = '08-11-2023'; // Replace with the desired date value
+      // const model = 'OpenAI'; // Replace with the desired model value
+  
+      const requestOptions = {
+>>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+<<<<<<< HEAD
           stat: 'totalwords',
+=======
+          date,
+          aimodel,
+        }),
+      };
+  
+      const response = await fetch('http://localhost:8000/summarize', requestOptions);
+  
+      if (response.ok) {
+        const data = await response.json();
+        setRecord(JSON.parse(data)); // Update the state with the fetched data
+      } else {
+        console.error('Failed to fetch data from the API');
+      }
+    } catch (error) {
+      console.error('An error occurred while fetching data:', error);
+    }
+  };
+
+  async function fetchDataFromBackendAPI() {
+    try {
+      const response = await fetch('http://localhost:8000/getindistats', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          stat: 'sumsbytech',
+>>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
         }),
       });
 
@@ -82,7 +133,15 @@ const Starter = () => {
       try {
         const data = await fetchDataFromBackendAPI();
         if (data) {
+<<<<<<< HEAD
           setChartData(data);
+=======
+
+          settotalwords(data["totalwords"]);
+          settotaltechstracked(data["totaltechstracked"]);
+          settotalsums(data["totalsums"]);
+          // setChartData({...rawData, ...data});
+>>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
         } else {
           console.log('Failed to fetch data from the API.');
         }
@@ -93,31 +152,55 @@ const Starter = () => {
 
     fetchData();
   }, []);
+<<<<<<< HEAD
+=======
+
+
+  const sayHello = () => {
+    alert('Hello!');
+  
+    onMount();
+
+  }
+>>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
   return (
     <div>
       {/***Top Cards***/}
       <Row>
-        <Col sm="6" lg="3">
+        <Col sm="4" lg="4">
           <TopCards
             bg="bg-light-success text-success"
+<<<<<<< HEAD
             title="Profit"
             subtitle="Total Words"
             earning={chartoptions && chartoptions.totalwords}
+=======
+            title="Total Words"
+            subtitle="Total Words"
+            earning={totalwords}
+>>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
             icon="bi bi-wallet"
           />
         </Col>
-        <Col sm="6" lg="3">
+        <Col sm="4" lg="4">
           <TopCards
             bg="bg-light-danger text-danger"
+<<<<<<< HEAD
             title="Refunds"
             subtitle="Total Technologies Tracked"
             earning={chartoptions && chartoptions.totaltechstracked}
+=======
+            title="Total Techs Tracked"
+            subtitle="Total Techs Tracked"
+            earning={totaltechstracked}
+>>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
             icon="bi bi-coin"
           />
         </Col>
-        <Col sm="6" lg="3">
+        <Col sm="4" lg="4">
           <TopCards
             bg="bg-light-warning text-warning"
+<<<<<<< HEAD
             title="New Project"
             subtitle="Total Summaries"
             earning={chartoptions && chartoptions.totalsums}
@@ -125,6 +208,23 @@ const Starter = () => {
           />
         </Col>
         
+=======
+            title="Total Summaries Collected"
+            subtitle="Total Summaries Collected"
+            earning={totalsums}
+            icon="bi bi-basket3"
+          />
+        </Col>
+        {/* <Col sm="6" lg="3">
+          <TopCards
+            bg="bg-light-info text-into"
+            title="Sales"
+            subtitle="Weekly Sales"
+            earning="210"
+            icon="bi bi-bag"
+          />
+        </Col> */}
+>>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
       </Row>
       {/***Sales & Feed***/}
       <Row>
@@ -134,15 +234,22 @@ const Starter = () => {
       </Row>
       {/***Table ***/}
       <Row>
+      <Col>
+      <button onClick={sayHello}>
+      Click me!
+    </button>
+    </Col>
+    </Row>
+      {/* <Row>
         <Col lg="7" xxl="8" md="12">
           <ProjectTables />
         </Col>
         <Col md="12" lg="5" xxl="4">
           <Feeds />
         </Col>
-      </Row>
+      </Row> */}
       {/***Blog Cards***/}
-      <Row>
+      {/* <Row>
         {BlogData.map((blg, index) => (
           <Col sm="6" lg="6" xl="3" key={index}>
             <Blog
@@ -154,7 +261,7 @@ const Starter = () => {
             />
           </Col>
         ))}
-      </Row>
+      </Row> */}
     </div>
   );
 };

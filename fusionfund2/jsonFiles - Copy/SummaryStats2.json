@@ -1,7 +1,7 @@
 {
-  "totalwords": 255623,
+  "totalwords": 112561,
   "totaltechstracked": 9,
-  "totalsums": 123,
+  "totalsums": 54,
   "sumsbytech": {
     "OPENAI": {
       "jan": 0,

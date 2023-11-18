@@ -48,14 +48,14 @@ def toExcel(summary, model):
     excel_writer.close()
 
     print("Excel file created successfully.")
-    logSave(summary_name, model, date)
+    logSave(summary_name, model, date,len(df.index))
     
 
 
 
 
     
-def logSave(summary_name, model, date):
+def logSave(summary_name, model, date,recs):
     import pandas
     # Step 1: Read Excel file as a DataFrame
     excel_file = 'SummarySheets\SummaryLogs.xlsx'  # Replace with the path to your Excel file
@@ -65,7 +65,7 @@ def logSave(summary_name, model, date):
     df['SerialNumber'] = df['SerialNumber'] + 1
 
     # Step 3: Add an entry to the DataFrame
-    new_entry = {'SerialNumber': max(df['SerialNumber']) + 1, 'File Name': summary_name, 'date': date, 'model' : model}
+    new_entry = {'SerialNumber': max(df['SerialNumber']) + 1, 'File Name': summary_name, 'date': date, 'model' : model,'Count':recs}
     new_entry_df = pandas.DataFrame(new_entry, index=[0])
     df = pandas.concat([df, new_entry_df], ignore_index=True)
 
@@ -86,6 +86,8 @@ def logSave(summary_name, model, date):
 
 
 def filter_excel_data(model, date):
+
+    print("ai    model",model)
     file_path = "SummarySheets\SummaryLogs.xlsx"
     # try:
 
@@ -111,28 +113,93 @@ def filter_excel_data(model, date):
 
         matching_cells = []
 
+        latest_date = None
+
+        # Find the latest date in the summarylogs file
+        for row in sheet.iter_rows(min_row=2):  # Assuming data starts from row 2
+            row_model = row[3].value  # Assuming model is in the fourth column
+            row_date = row[2].value  # Assuming date is in the third column
+
+            if latest_date is None or row_date > latest_date:
+                latest_date = row_date
+
+        print("--+--",latest_date)
+
+        # If date parameter is None, use the latest date
+        if date is None or date == "":
+            date = latest_date
+        else:
+            print("date not none")
+
+
+
         for row in sheet.iter_rows(min_row=2):  # Assuming data starts from row 2
             row_model = row[3].value  # Assuming mode is in the first column
             row_date = row[2].value  # Assuming date is in the second column
-            print(row_model == model and row_date == date)
-            if row_model == model and row_date == date:
-                print(row[1].value)
-                # If mode and date match, add the entire row to the result list
-                matching_cells.append(row[1].value)
+
+            if (row_model is not None and model is not None):
+                print(row_model.lower() == model.lower() and row_date == date)
+                print("1   ",row_model ,"2   ",model ,"3   ",row_date,"4   ", date)
+                if row_model.lower() == model.lower() and row_date == date:
+                    print(row[1].value)
+                    # If mode and date match, add the entire row to the result list
+                    matching_cells.append(row[1].value)
 
         workbook.close()
+
+        print("matching_cells--",matching_cells)
         return matching_cells
 
     except Exception as e:
         return str(e)
 
-
-
-
-
-
-
+def remove_duplicates_preserve_case(input_list):
+    unique_list = []
     
+    for item in input_list:
+        if item is not None:
+            # Convert the item to lowercase before checking for uniqueness
+            item_lower = item.lower()
+            if item_lower not in unique_list:
+                unique_list.append(item_lower)
+    
+    return unique_list
+
+
+def getinfodates():
+    file_path = "SummarySheets\SummaryLogs.xlsx"
+
+    import openpyxl
+    try:
+        # Open the Excel file
+        workbook = openpyxl.load_workbook(file_path)
+        sheet = workbook.active
+
+        matching_cells = []
+
+        latest_date = None
+
+        datescollected=[]
+        modelscollected=[]
+
+        # Find the latest date in the summarylogs file
+        for row in sheet.iter_rows(min_row=2):  # Assuming data starts from row 2
+            row_model = row[3].value  # Assuming model is in the fourth column
+            row_date = row[2].value  # Assuming date is in the third column
+
+            datescollected.append(row_date) 
+            modelscollected.append(row_model)  
+        datescollected =  list(set(datescollected))
+        print(modelscollected)
+        modelscollected = remove_duplicates_preserve_case(modelscollected)
+        workbook.close()
+
+        return {"date":datescollected,"models":modelscollected}
+
+    except Exception as e:
+        return str(e)
+
+
 
 
 def extract_summary_bart_cells(data_list):
@@ -164,6 +231,8 @@ def extract_summary_bart_cells(data_list):
                         print(f"Error processing file {file}: {str(e)}")
 
         return summary_list
+
+
 
 
 
