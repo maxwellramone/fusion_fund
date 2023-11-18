@@ -49,13 +49,6 @@ const BlogData = [
 
 
 const Starter = () => {
-<<<<<<< HEAD
-  const [chartoptions, setChartData] = useState(null);
-  
-  async function fetchDataFromBackendAPI() {
-    try {
-      const response = await fetch('http://localhost:8000/getstats', {
-=======
 
   const [record, setRecord] = useState([]);
 
@@ -74,15 +67,11 @@ const Starter = () => {
       // const model = 'OpenAI'; // Replace with the desired model value
   
       const requestOptions = {
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-<<<<<<< HEAD
-          stat: 'totalwords',
-=======
           date,
           aimodel,
         }),
@@ -110,7 +99,6 @@ const Starter = () => {
         },
         body: JSON.stringify({
           stat: 'sumsbytech',
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
         }),
       });
 
@@ -133,15 +121,11 @@ const Starter = () => {
       try {
         const data = await fetchDataFromBackendAPI();
         if (data) {
-<<<<<<< HEAD
-          setChartData(data);
-=======
 
           settotalwords(data["totalwords"]);
           settotaltechstracked(data["totaltechstracked"]);
           settotalsums(data["totalsums"]);
           // setChartData({...rawData, ...data});
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
         } else {
           console.log('Failed to fetch data from the API.');
         }
@@ -152,8 +136,6 @@ const Starter = () => {
 
     fetchData();
   }, []);
-<<<<<<< HEAD
-=======
 
 
   const sayHello = () => {
@@ -162,7 +144,6 @@ const Starter = () => {
     onMount();
 
   }
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
   return (
     <div>
       {/***Top Cards***/}
@@ -170,45 +151,24 @@ const Starter = () => {
         <Col sm="4" lg="4">
           <TopCards
             bg="bg-light-success text-success"
-<<<<<<< HEAD
-            title="Profit"
-            subtitle="Total Words"
-            earning={chartoptions && chartoptions.totalwords}
-=======
             title="Total Words"
             subtitle="Total Words"
             earning={totalwords}
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
             icon="bi bi-wallet"
           />
         </Col>
         <Col sm="4" lg="4">
           <TopCards
             bg="bg-light-danger text-danger"
-<<<<<<< HEAD
-            title="Refunds"
-            subtitle="Total Technologies Tracked"
-            earning={chartoptions && chartoptions.totaltechstracked}
-=======
             title="Total Techs Tracked"
             subtitle="Total Techs Tracked"
             earning={totaltechstracked}
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
             icon="bi bi-coin"
           />
         </Col>
         <Col sm="4" lg="4">
           <TopCards
             bg="bg-light-warning text-warning"
-<<<<<<< HEAD
-            title="New Project"
-            subtitle="Total Summaries"
-            earning={chartoptions && chartoptions.totalsums}
-            icon="bi bi-basket3"
-          />
-        </Col>
-        
-=======
             title="Total Summaries Collected"
             subtitle="Total Summaries Collected"
             earning={totalsums}
@@ -224,7 +184,6 @@ const Starter = () => {
             icon="bi bi-bag"
           />
         </Col> */}
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
       </Row>
       {/***Sales & Feed***/}
       <Row>
