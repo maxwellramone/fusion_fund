@@ -48,6 +48,7 @@ websites = [
 ]
 
 def collectData():
+    print("collectData")
     keys = list(websites[0].keys())
     
     update_stats_file("totalTechsTracked", new_value=len(keys))

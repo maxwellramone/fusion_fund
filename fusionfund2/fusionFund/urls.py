@@ -26,5 +26,8 @@ urlpatterns = [
     path('test', test),
     path('makelog', makeLog),
     path('savejsonfile', saveJSONFile),
-    path('getstats', getStats)
+    path('getstats', getStats),
+    path('getindistats', getindiStats),
+    path('getdates', getdates)
+    
 ]
