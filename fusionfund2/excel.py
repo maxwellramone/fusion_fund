@@ -235,6 +235,20 @@ def extract_summary_bart_cells(data_list):
 
 
 
+def read_summary_column(file_name):
+    try:
+        # Read the Excel file using pandas
+        df = pandas.read_excel(file_name)
+
+        # Extract the values from the "Summary_Bart" column and return as a list
+        summary_values = df['Summary_Bart'].tolist()
+
+        return summary_values
+
+    except Exception as e:
+        # If an error occurs, print the error and return an empty list
+        print(f"Error: {e}")
+        return []
 
 
 def createLog():
@@ -257,7 +271,7 @@ def createLog():
 
 
 
-def summaries_ranked(model):
+def summaries_sorted(model):
     file_path = 'fusionfund2\SummarySheets\SummaryLogs.xlsx'
 
     try:
@@ -275,7 +289,7 @@ def summaries_ranked(model):
         result_list = model_rows['File Name'].tolist()
 
         # Take only the first three values if there are more than three
-        result_list = result_list[-3:]
+        result_list = result_list[-1:]
 
         return result_list
 

@@ -24,15 +24,10 @@ def update_stats_file(key, new_value=None, added_value=None, nested_key=None, ne
         data = json.load(json_file)
     
     key = key.lower()
-<<<<<<< HEAD
     if(nested_key is not None):
         nested_key = nested_key.upper()
         if(double_nested_key is not None):
             double_nested_key = double_nested_key.lower()
-=======
-    
-    
->>>>>>> 45f0f8141c957490494f1048f11c582506e7be77
     
     # If a nested key and value are provided, update the nested dictionary
     if added_value is None:
