@@ -15,6 +15,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2023-11-18 18:05:11,429 - elsapy.elsclient - INFO - Module loaded.
 2023-11-18 18:05:11,431 - elsapy.utils - INFO - Module loaded.
 2023-11-18 18:05:11,431 - elsapy.elssearch - INFO - Module loaded.
@@ -28,6 +29,8 @@
 2023-11-18 18:10:42,751 - elsapy.elsprofile - INFO - Module loaded.
 2023-11-18 18:10:42,752 - elsapy.elsdoc - INFO - Module loaded.
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -54,6 +57,9 @@
 2023-11-18 17:16:13,248 - elsapy.utils - INFO - Converting prism:coverDate
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
