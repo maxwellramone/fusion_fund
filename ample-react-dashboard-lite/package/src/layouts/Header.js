@@ -20,7 +20,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const toggle = () => {
+    // setDropdownOpen((prevState) => !prevState)
+  };
   const Handletoggle = () => {
     setIsOpen(!isOpen);
   };
@@ -58,7 +60,7 @@ const Header = () => {
 
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
-          <NavItem>
+          {/* <NavItem>
             <Link to="/starter" className="nav-link">
               Starter
             </Link>
@@ -67,7 +69,7 @@ const Header = () => {
             <Link to="/about" className="nav-link">
               About
             </Link>
-          </NavItem>
+          </NavItem> */}
           {/* <UncontrolledDropdown inNavbar nav>
             <DropdownToggle caret nav>
               DD Menu
