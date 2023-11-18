@@ -406,18 +406,18 @@ def save_search_results(search_name, research_db, results):
 
     try:
         # Check if the file already exists
-        with open(f"{search_name}_{research_db}_search_results.json", 'r') as file:
+        with open(f"ResearchStats\{search_name}_{research_db}_search_results.json", 'r') as file:
             existing_data = json.load(file)
             existing_data.update(search_results)
 
-        with open(f"{search_name}_{research_db}_search_results.json", 'w') as file:
+        with open(f"ResearchStats\{search_name}_{research_db}_search_results.json", 'w') as file:
             json.dump(existing_data, file, indent=4)
 
         print(f"Updating search results for search_name: {search_name} & research_db: {research_db}")
 
     except FileNotFoundError:
         # If the file doesn't exist, create a new one
-        with open(f"{search_name}_{research_db}_search_results.json", 'w') as file:
+        with open(f"ResearchStats\{search_name}_{research_db}_search_results.json", 'w') as file:
             json.dump(search_results, file, indent=4)
 
         print(f"Inserting search results for search_name: {search_name} & research_db: {research_db}")
