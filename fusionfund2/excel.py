@@ -188,10 +188,30 @@ def createLog():
 
 
 
-def getTop3(model):
-    print("getTop3")
+def summaries_ranked(model):
+    file_path = 'fusionfund2\SummarySheets\SummaryLogs.xlsx'
 
+    try:
+        # Open the Excel file
+        excel_file = pandas.ExcelFile(file_path)  # Use the variable 'file_path' for consistency
 
+        # Read the data from the Excel file
+        df = excel_file.parse(excel_file.sheet_names[0])  # Assuming data is in the first sheet
+
+        # Filter rows based on the specified model
+        model_rows = df[df['model'] == model]
+        model_rows.sort_values(by='SerialNumber', ascending=False)  # Sort in-place
+
+        # Create a list of values from the 'File Name' column
+        result_list = model_rows['File Name'].tolist()
+
+        # Take only the first three values if there are more than three
+        result_list = result_list[-3:]
+
+        return result_list
+
+    except Exception as e:
+        return [str(e)]  # Return the error message as a list
 
 
 

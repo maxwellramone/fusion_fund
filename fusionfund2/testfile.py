@@ -47,57 +47,34 @@
 
 
 
-# file_path = 'SummarySheets\SummaryLogs.xlsx'
+file_path = 'fusionfund2\SummarySheets\SummaryLogs2 (1).xlsx'
 
-# import pandas as pd
+import pandas
 
-# def process_data_by_model(model):
-#     # Open the Excel file
-#     excel_file = pd.ExcelFile(file_path)  # Use the variable 'file_path' for consistency
+def process_data_by_model(model):
+    try:
+        # Open the Excel file
+        excel_file = pandas.ExcelFile(file_path)  # Use the variable 'file_path' for consistency
 
-#     # Read the data from the Excel file
-#     df = excel_file.parse(excel_file.sheet_names[0])  # Assuming data is in the first sheet
+        # Read the data from the Excel file
+        df = excel_file.parse(excel_file.sheet_names[0])  # Assuming data is in the first sheet
 
-#     # Filter rows based on the specified model
-#     model_rows = df[df['model'] == model]
+        # Filter rows based on the specified model
+        model_rows = df[df['model'] == model]
+        model_rows.sort_values(by='SerialNumber', ascending=False)  # Sort in-place
+        print(model_rows)
+        # Create a list of values from the 'File Name' column
+        result_list = model_rows['File Name'].tolist()
 
-#     # Sort rows by 'SerialNumber' column in descending order and take the top row
-#     top_row = model_rows.sort_values(by='SerialNumber', ascending=False).head(1)
+        # Take only the first three values if there are more than three
+        result_list = result_list[-3:]
 
-#     # Check if there is at least one row
-#     if not top_row.empty:
-#         # Extract values from the top row and the 'File Name' column
-#         result_list = top_row.iloc[0].tolist()
-#         result_list.insert(1, top_row['File Name'].iloc[0])  # Insert 'File Name' value at the appropriate position
+        return result_list
 
-#         return model_rows
+    except Exception as e:
+        return [str(e)]  # Return the error message as a list
 
-#     else:
-#         # If there are no matching rows, return an empty list
-#         return []
-
-# # Example usage:
-# model = "OpenAI"
-# result = process_data_by_model(model)
-# print(result)
-
-
-from toJson import read_stats_file
-def convert_to_new_array(input_dict):
-    
-    result_array = {"series": []}
-
-    for key, value in input_dict.items():
-        company_data = {"name": key, "data": []}
-        for month in ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]:
-            company_data["data"].append(value[month])
-
-        result_array["series"].append(company_data)
-
-    return result_array
-
-diction = read_stats_file(key="sumsbytech")
-
-result = convert_to_new_array(diction)
-
+# Example usage:
+model = "OpenAI"
+result = process_data_by_model(model)
 print(result)

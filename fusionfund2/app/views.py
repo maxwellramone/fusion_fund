@@ -85,12 +85,13 @@ def getStats(request):
 
 	if request.method == "POST":
 		stat = request.data.get("stat", None) 
-		print(stat)
-		obj = read_stats_file(key=stat)
+		
 		
 		if stat == "sumsbytech":
-			print("check")
+			obj = read_stats_file(key=stat)
 			obj = convert_to_new_array(obj)
+		else:
+			obj = read_stats_file()
 
 		return Response(obj, status=200)
 

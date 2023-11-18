@@ -24,8 +24,10 @@ def update_stats_file(key, new_value=None, added_value=None, nested_key=None, ne
         data = json.load(json_file)
     
     key = key.lower()
-    nested_key = nested_key.upper()
-    double_nested_key = double_nested_key.lower()
+    if(nested_key is not None):
+        nested_key = nested_key.upper()
+        if(double_nested_key is not None):
+            double_nested_key = double_nested_key.lower()
     
     # If a nested key and value are provided, update the nested dictionary
     if added_value is None:
@@ -64,6 +66,9 @@ def convert_to_new_array(input_dict):
         result_array["series"].append(company_data)
 
     return result_array
+
+
+
 
 
 

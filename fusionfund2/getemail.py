@@ -43,3 +43,9 @@ print('Test')
 
 # Collect Top 3 summaries
 
+def sendMail(model):
+    from excel import summaries_ranked
+
+    sums = summaries_ranked(model)
+    sums
+    
