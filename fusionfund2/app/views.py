@@ -154,17 +154,19 @@ def searchresearch(request):
 
 @api_view(["POST"])
 def sendEmail(request):
+	from getemail import sendMessage
+	from excel import summaries_sorted
 	if request.method == "POST":
-
-
-		return Response('summary', status=200)
+		
+		sendMessage()
+		return Response(status=200)
 	
 
 
 
 
 
-
+ 
 
 @api_view(["POST"])
 def test(request):

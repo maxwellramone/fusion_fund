@@ -29,6 +29,7 @@ urlpatterns = [
     path('getstats', getStats),
     path('getindistats', getindiStats),
     path('getdates', getdates),
-    path('searchresearch', searchresearch)
+    path('searchresearch', searchresearch),
+    path('sendemail', sendEmail)
     
 ]

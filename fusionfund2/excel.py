@@ -242,7 +242,7 @@ def read_summary_column(file_name):
 
         # Extract the values from the "Summary_Bart" column and return as a list
         summary_values = df['Summary_Bart'].tolist()
-
+        
         return summary_values
 
     except Exception as e:
@@ -272,7 +272,7 @@ def createLog():
 
 
 def summaries_sorted(model):
-    file_path = 'fusionfund2\SummarySheets\SummaryLogs.xlsx'
+    file_path = 'SummarySheets\SummaryLogs.xlsx'
 
     try:
         # Open the Excel file
@@ -294,6 +294,7 @@ def summaries_sorted(model):
         return result_list
 
     except Exception as e:
+        print(e)
         return [str(e)]  # Return the error message as a list
 
 

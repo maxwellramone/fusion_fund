@@ -5,24 +5,42 @@ from nltk.stem import PorterStemmer
 
 
 
-def sendEmail (model):
+def sendMessage():
+    from main import websites
+
+    keys = list(websites[0].keys())
+
+    html_content = ""
+    for key in keys:
+        
+        summaries_ranked = get_ranks(key)
+        if summaries_ranked:
+            html_content += f"""
+            <html>
+                <body>
+                    <h2>{key}:</h2>
+            """
+
+            # Add each summary to the html_content
+            for summary in summaries_ranked[:3]:
+                html_content += f"<p>{summary}</p>"
+
+            html_content += """
+                </body>
+            </html>
+            """
+
     sender_email = 'fusionfundtestemail@gmail.com'
     sender_password = 'yedf ttry sxpm gzfk'
-    recipient_email = 'mzhou2222@gmail.com'
-    subject = 'hello'
-    message = 'Hello'
+    recipient_email = 'maxwellramone3@gmail.com'
+    subject = 'Weekly Update on AI Technologies'
+    # message = 'Hello'
 
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = recipient_email
     msg['Subject'] = subject
 
-    
-    html_content = """
-    <html>
-    
-    </html>
-    """
 
     msg.attach(MIMEText(html_content, 'html'))
 
@@ -36,7 +54,7 @@ def sendEmail (model):
 
         server.sendmail(sender_email, recipient_email, msg.as_string())
 
-    print('Test')
+    print('Email Sent')
 
 
 
@@ -48,32 +66,30 @@ def sendEmail (model):
 
 # Collect Top 3 summaries
 
-def rank_sentence(model):
+def get_ranks(model):
     from excel import summaries_sorted, read_summary_column
 
-    file_name = summaries_sorted(model)
-    # Example usage with input from a text file:
-    # file_path = '/input.txt'  # Replace with the path to your text file IN A STRING
-    sample_sentences = read_summary_column(file_name)
+    file_names = summaries_sorted(model)
+    if file_names is not None:
+        file_name = str(file_names[0])
+        # Example usage with input from a text file:
+        # file_path = '/input.txt'  # Replace with the path to your text file IN A STRING
+        sample_sentences = read_summary_column(file_name)
+        # print(sample_sentences)
+        if sample_sentences:
+            try:
+                target_words = ["breakthrough", "research", "findings", "aquisition",
+                                "trends", "emerging", "innovation", "awards"
+                                "new", "recent", "talent", "government", "medical",
+                                "education", "trends", "launches", "findings"]  # List of words for similarity comparison
 
-    if sample_sentences:
-        target_words = ["breakthrough", "research", "findings", "aquisition",
-                        "trends", "emerging", "innovation", "awards"
-                        "new", "recent", "talent", "government", "medical",
-                        "education", "trends", "launches", "findings"]  # List of words for similarity comparison
-
-        ranked_result = rank_sentences(sample_sentences, target_words)
-        return ranked_result
-        # print("Original Sentences:")
-        # for sentence in sample_sentences:
-        #     print(sentence)
-
-        # print("\nRanked Sentences:")
-        # for sentence in ranked_result:
-        #     print(sentence)
-    else:
-        print("No sentences to process.")
-        return []
+                ranked_result = rank_sentences(sample_sentences, target_words)
+                return ranked_result
+                
+            except Exception as e:
+                print(e)
+        else:
+            return []
     
     
 

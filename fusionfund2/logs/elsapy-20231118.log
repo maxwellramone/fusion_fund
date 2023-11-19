@@ -24,3 +24,9 @@
 2023-11-18 18:10:42,751 - elsapy.elsentity - INFO - Module loaded.
 2023-11-18 18:10:42,751 - elsapy.elsprofile - INFO - Module loaded.
 2023-11-18 18:10:42,752 - elsapy.elsdoc - INFO - Module loaded.
+2023-11-18 19:15:21,393 - elsapy.elsclient - INFO - Module loaded.
+2023-11-18 19:15:21,395 - elsapy.utils - INFO - Module loaded.
+2023-11-18 19:15:21,395 - elsapy.elssearch - INFO - Module loaded.
+2023-11-18 19:15:21,396 - elsapy.elsentity - INFO - Module loaded.
+2023-11-18 19:15:21,397 - elsapy.elsprofile - INFO - Module loaded.
+2023-11-18 19:15:21,397 - elsapy.elsdoc - INFO - Module loaded.
