@@ -347,7 +347,7 @@ const Starter = () => {
         </Col>
       </Row>
 
-      
+     
 
       <Row>
         <Col sm="6" lg="6">
