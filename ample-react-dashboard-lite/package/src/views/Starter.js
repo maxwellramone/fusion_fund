@@ -190,15 +190,15 @@ const Starter = () => {
 
 
   const sayHello = () => {
-    alert('Hello!');
+    alert('Are you sure you wanna trigger crawler!');
 
     // onMount();
 
   }
 
   const runresearch = () => {
-    alert('Hello! 2');
 
+    alert('Are you sure you wanna trigger research crawler!');
     researchtrigger();
 
   }
@@ -252,6 +252,7 @@ const Starter = () => {
 
       <Row>
         <Col sm="6" lg="6" onClick={sayHello}>
+
           <TopCards
             bg="bg-light-success text-success"
             subtitle="Click here !  Run the Web crawler for AI tech Pages !"
@@ -265,22 +266,22 @@ const Starter = () => {
 
           <Card>
             {/* <CardTitle tag="h6" className="border-bottom p-3 mb-0"> */}
-             
-                <Dropdown onselect={handleChangedate}>
-                  <DropdownToggle variant="primary">Select Research Site</DropdownToggle>
-                  <DropdownMenu>
-                    {researchvals.map((option) => (
-                      <Dropdown.Item key={option.value} onClick={() => handleChangedate(option)}>{option.text}</Dropdown.Item>
-                    ))}
-                          
-                  </DropdownMenu><h3>{rsite}</h3>
-                </Dropdown>
 
-                <button onClick={runresearch} onClick={runresearch}>
+            <Dropdown onselect={handleChangedate}>
+              <DropdownToggle variant="primary">Select Research Site</DropdownToggle>
+              <DropdownMenu>
+                {researchvals.map((option) => (
+                  <Dropdown.Item key={option.value} onClick={() => handleChangedate(option)}>{option.text}</Dropdown.Item>
+                ))}
+
+              </DropdownMenu><h3>{rsite}</h3>
+            </Dropdown>
+
+            <button onClick={runresearch} onClick={runresearch}>
               Click to trigger Research search !
             </button>
 
-          
+
 
             {/* </CardTitle> */}
 
@@ -297,6 +298,301 @@ const Starter = () => {
 
 
       </Row>
+      <Row>
+        <Col sm="6" lg="6" >
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              OpenAI:
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                    Focus: Artificial General Intelligence (AGI) research and development.
+                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and safe development of artificial intelligence.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+
+        <Col sm="6" lg="6" >
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              SAIL (Stanford Artificial Intelligence Lab)::
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                    Focus: Artificial General Intelligence (AGI) research and development.
+                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and saAffiliation: Stanford University.
+                    Focus: Research and development in various areas of artificial intelligence, including machine learning and robotics.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+      </Row>
+
+      <Row>
+        <Col sm="6" lg="6">
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              OpenAI:
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                    Focus: Artificial General Intelligence (AGI) research and development.
+                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and safe development of artificial intelligence.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+
+        <Col sm="6" lg="6" >
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              SAIL (Stanford Artificial Intelligence Lab)::
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                    Focus: Artificial General Intelligence (AGI) research and development.
+                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and saAffiliation: Stanford University.
+                    Focus: Research and development in various areas of artificial intelligence, including machine learning and robotics.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+      </Row>
+
+      <Row>
+        <Col sm="6" lg="6">
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              BAIR (Berkeley Artificial Intelligence Research Lab):
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Affiliation: University of California, Berkeley.
+Focus: Research in a wide range of AI areas, including computer vision, natural language processing, robotics, and machine learning.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+
+        <Col sm="6" lg="6" >
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              Vector Institute:
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Location: Toronto, Canada.
+Focus: A research institute dedicated to advancing artificial intelligence, with a focus on deep learning and machine learning.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+      </Row>
+
+      <Row>
+        <Col sm="6" lg="6">
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              CMU (Carnegie Mellon University):
+
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Affiliation: Carnegie Mellon University.
+Focus: Leading research institution in various AI disciplines, including robotics, computer vision, natural language processing, and machine learning.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+
+        <Col sm="6" lg="6" >
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              FAIR (Facebook AI Research):
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Affiliation: Facebook.
+Focus: Conducts research in various AI fields, with a focus on advancing the state of the art in machine learning and artificial intelligence.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+      </Row>
+
+      <Row>
+        <Col sm="6" lg="6">
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              Google AI/Google Research:
+
+
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Affiliation: Google.
+Focus: Conducts research across a broad spectrum of AI disciplines, including machine learning, natural language processing, computer vision, and robotics.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+
+        <Col sm="6" lg="6" >
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              AI2 (Allen Institute for Artificial Intelligence):
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Founder: Paul Allen.
+Focus: A research institute that aims to contribute to the field of AI by conducting high-impact research in areas such as natural language processing, computer vision, and machine learning.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+      </Row>
+
+      <Row>
+        <Col sm="6" lg="6">
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              Google AI/Google Research:
+
+
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Affiliation: Google.
+Focus: Conducts research across a broad spectrum of AI disciplines, including machine learning, natural language processing, computer vision, and robotics.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+
+        <Col sm="6" lg="6" >
+
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+               
+              Acquired by: Google (Alphabet Inc.).
+
+            </CardTitle>
+            <CardBody className="">
+              <div>
+                <Alert color="success">
+                  {/* <h4 className="alert-heading">Well done!</h4> */}
+                  <p>
+                  Focus: Specializes in deep learning and artificial general intelligence. Known for achievements in game-playing AI (e.g., AlphaGo) and healthcare applications.
+                  </p>
+
+                </Alert>
+              </div>
+            </CardBody>
+          </Card>
+
+        </Col>
+      </Row>
+
 
 
 
