@@ -254,26 +254,8 @@ const [days,setdays] = useState ([])
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-3*/}
       {/* --------------------------------------------------------------------------------*/}
-      <Card>
-        <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-          <i className="bi bi-bell me-2" />
-          summary #3
-        </CardTitle>
-        <CardBody className="">
-          <div>
-            <Alert color="success">
-              {/* <h4 className="alert-heading">Well done!</h4> */}
-              <p>
-                Aww yeah, you successfully read this important alert message.
-                This example text is going to run a bit longer so that you can
-                see how spacing within an alert works with this kind of content.
-              </p>
-             
-            </Alert>
-            <h3>add</h3>
-          </div>
-        </CardBody>
-      </Card>
+ 
+      
       {/* --------------------------------------------------------------------------------
       {/* Card-4*/}
       {/* --------------------------------------------------------------------------------*/}
