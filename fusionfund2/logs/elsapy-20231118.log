@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2023-11-18 14:57:22,505 - elsapy.elsclient - INFO - Module loaded.
 2023-11-18 14:57:22,508 - elsapy.utils - INFO - Module loaded.
 2023-11-18 14:57:22,508 - elsapy.elssearch - INFO - Module loaded.
@@ -30,3 +31,11 @@
 2023-11-18 19:15:21,396 - elsapy.elsentity - INFO - Module loaded.
 2023-11-18 19:15:21,397 - elsapy.elsprofile - INFO - Module loaded.
 2023-11-18 19:15:21,397 - elsapy.elsdoc - INFO - Module loaded.
+=======
+2023-11-18 17:34:09,707 - elsapy.elsclient - INFO - Module loaded.
+2023-11-18 17:34:09,715 - elsapy.utils - INFO - Module loaded.
+2023-11-18 17:34:09,715 - elsapy.elssearch - INFO - Module loaded.
+2023-11-18 17:34:09,715 - elsapy.elsentity - INFO - Module loaded.
+2023-11-18 17:34:09,715 - elsapy.elsprofile - INFO - Module loaded.
+2023-11-18 17:34:09,715 - elsapy.elsdoc - INFO - Module loaded.
+>>>>>>> 8c4f875b26c3876b699773bc706a61579ad9861e

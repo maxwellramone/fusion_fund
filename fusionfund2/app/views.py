@@ -143,7 +143,19 @@ def searchresearch(request):
 		
 		stat = request.data.get("rsite", "scopus") 
 		# print(stat)
-		obj = search("AI Technology",stat)
+		researchdb="scopus"
+		if stat=="Scopus":
+			researchdb="scopus"
+		elif stat=="Pubmed":
+			researchdb="pubmed"
+		elif stat=="IEEE":
+			researchdb="ieee"
+		
+		
+
+
+
+		obj = search("AI Technology",researchdb)
 
 
 		return Response(obj, status=200)

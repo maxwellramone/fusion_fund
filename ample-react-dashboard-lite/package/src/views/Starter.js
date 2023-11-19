@@ -251,10 +251,10 @@ const Starter = () => {
       </Row>
 
       <Row>
-        <Col sm="6" lg="6" onClick={runresearch}>
+        <Col sm="6" lg="6" onClick={sayHello}>
           <TopCards
             bg="bg-light-success text-success"
-            subtitle="Click here !  Run the Web crawler for research engines !"
+            subtitle="Click here !  Run the Web crawler for AI tech Pages !"
           >
             <button onClick={sayHello}>
               Run the Web crawler for web engines !
@@ -277,7 +277,7 @@ const Starter = () => {
                 </Dropdown>
 
                 <button onClick={runresearch} onClick={runresearch}>
-              Click to trigger search !
+              Click to trigger Research search !
             </button>
 
           
