@@ -257,7 +257,7 @@ const Starter = () => {
             bg="bg-light-success text-success"
             subtitle="Click here !  Run the Web crawler for AI tech Pages !"
           >
-            <button onClick={sayHello}>
+            <button  onClick={sayHello}>
               Run the Web crawler for web engines !
             </button>
           </TopCards>
@@ -347,54 +347,7 @@ const Starter = () => {
         </Col>
       </Row>
 
-      <Row>
-        <Col sm="6" lg="6">
-
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-               
-              OpenAI:
-            </CardTitle>
-            <CardBody className="">
-              <div>
-                <Alert color="success">
-                  {/* <h4 className="alert-heading">Well done!</h4> */}
-                  <p>
-                    Focus: Artificial General Intelligence (AGI) research and development.
-                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and safe development of artificial intelligence.
-                  </p>
-
-                </Alert>
-              </div>
-            </CardBody>
-          </Card>
-
-        </Col>
-
-        <Col sm="6" lg="6" >
-
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-               
-              SAIL (Stanford Artificial Intelligence Lab)::
-            </CardTitle>
-            <CardBody className="">
-              <div>
-                <Alert color="success">
-                  {/* <h4 className="alert-heading">Well done!</h4> */}
-                  <p>
-                    Focus: Artificial General Intelligence (AGI) research and development.
-                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and saAffiliation: Stanford University.
-                    Focus: Research and development in various areas of artificial intelligence, including machine learning and robotics.
-                  </p>
-
-                </Alert>
-              </div>
-            </CardBody>
-          </Card>
-
-        </Col>
-      </Row>
+      
 
       <Row>
         <Col sm="6" lg="6">
@@ -544,37 +497,14 @@ Focus: A research institute that aims to contribute to the field of AI by conduc
       </Row>
 
       <Row>
-        <Col sm="6" lg="6">
-
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-               
-              Google AI/Google Research:
-
-
-            </CardTitle>
-            <CardBody className="">
-              <div>
-                <Alert color="success">
-                  {/* <h4 className="alert-heading">Well done!</h4> */}
-                  <p>
-                  Affiliation: Google.
-Focus: Conducts research across a broad spectrum of AI disciplines, including machine learning, natural language processing, computer vision, and robotics.
-                  </p>
-
-                </Alert>
-              </div>
-            </CardBody>
-          </Card>
-
-        </Col>
+        
 
         <Col sm="6" lg="6" >
 
           <Card>
             <CardTitle tag="h6" className="border-bottom p-3 mb-0">
                
-              Acquired by: Google (Alphabet Inc.).
+            DeepMind:
 
             </CardTitle>
             <CardBody className="">
@@ -582,6 +512,8 @@ Focus: Conducts research across a broad spectrum of AI disciplines, including ma
                 <Alert color="success">
                   {/* <h4 className="alert-heading">Well done!</h4> */}
                   <p>
+                  Acquired by: Google (Alphabet Inc.).
+
                   Focus: Specializes in deep learning and artificial general intelligence. Known for achievements in game-playing AI (e.g., AlphaGo) and healthcare applications.
                   </p>
 
