@@ -347,54 +347,7 @@ const Starter = () => {
         </Col>
       </Row>
 
-      <Row>
-        <Col sm="6" lg="6">
-
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-               
-              OpenAI:
-            </CardTitle>
-            <CardBody className="">
-              <div>
-                <Alert color="success">
-                  {/* <h4 className="alert-heading">Well done!</h4> */}
-                  <p>
-                    Focus: Artificial General Intelligence (AGI) research and development.
-                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and safe development of artificial intelligence.
-                  </p>
-
-                </Alert>
-              </div>
-            </CardBody>
-          </Card>
-
-        </Col>
-
-        <Col sm="6" lg="6" >
-
-          <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-               
-              SAIL (Stanford Artificial Intelligence Lab)::
-            </CardTitle>
-            <CardBody className="">
-              <div>
-                <Alert color="success">
-                  {/* <h4 className="alert-heading">Well done!</h4> */}
-                  <p>
-                    Focus: Artificial General Intelligence (AGI) research and development.
-                    Notable: Known for creating advanced language models like GPT-3 and working towards the ethical and saAffiliation: Stanford University.
-                    Focus: Research and development in various areas of artificial intelligence, including machine learning and robotics.
-                  </p>
-
-                </Alert>
-              </div>
-            </CardBody>
-          </Card>
-
-        </Col>
-      </Row>
+     
 
       <Row>
         <Col sm="6" lg="6">
